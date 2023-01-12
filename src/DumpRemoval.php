@@ -24,7 +24,7 @@ class DumpRemoval implements FixerInterface
     public function getDefinition(): FixerDefinition
     {
         return new FixerDefinition(
-            'Removes dump/var_dump statements from the target code.',
+            'Removes dump statements from the target code.',
             array(new CodeSample("<?php\nvar_dump(false);"))
         );
     }
@@ -53,36 +53,20 @@ class DumpRemoval implements FixerInterface
     {
         foreach($tokens as $index => $token)
         {
-            if($token->isGivenKind(T_STRING) && in_array($token->getContent(), $this->statements)) {
-                $startFunction = $tokens->getPrevNonWhitespace($index);
-                $endFunction = $tokens->getNextTokenOfKind($index, [';']);
-
-                $tokens->clearRange($startFunction + 1, $endFunction);
+            if(!$this->tokenMatch($token)){
+                continue;
             }
+
+            $startFunction = $tokens->getPrevNonWhitespace($index);
+            $endFunction = $tokens->getNextTokenOfKind($index, [';']);
+
+            $tokens->clearRange($startFunction + 1, $endFunction);
         }
     }
 
-    // public function applyFix(SplFileInfo $file, Tokens $tokens): void
-    // {
-    //     foreach($this->statements as $index => $statement) {
-    //         while($index !== null){
-    //             $matches = $this->find($statement, $tokens, $index);
-
-    //             if($matches === null) {
-    //                 break;
-    //             }
-
-    //             $startFunction = $tokens->getPrevNonWhitespace($matches[0]);
-
-    //             if($tokens[$startFunction]->isGivenKind(T_NEW) || $tokens[$startFunction]->isGivenKind(T_FUNCTION)) {
-    //                 break;
-    //             }
-
-    //             $endFunction = $tokens->getNextTokenOfKind($matches[1], [';']);
-
-    //             $tokens->clearRange($startFunction + 1, $endFunction);
-    //         }
-    //     }
-    // }
+    private function tokenMatch($token): bool
+    {
+        return $token->isGivenKind(T_STRING) && in_array($token->getContent(), $this->statements);
+    }
 }
 
