@@ -12,11 +12,12 @@ class DumpRemoval extends AbstractFunctionReferenceFixer
     private $statements = [
         'var_dump',
         'dump',
+        'dd'
     ];
 
     public function getName(): string
     {
-        return 'tombenevides/dump-linter';
+        return 'Tombenevides/dump-removal';
     }
 
     public function getDefinition(): FixerDefinition
