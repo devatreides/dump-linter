@@ -17,7 +17,7 @@ class DumpRemoval extends AbstractFunctionReferenceFixer
 
     public function getName(): string
     {
-        return 'Tombenevides/dump-removal';
+        return 'Tombenevides/dump_removal';
     }
 
     public function getDefinition(): FixerDefinition
