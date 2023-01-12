@@ -10,9 +10,22 @@ function configure_composer_auth {
     export COMPOSER_AUTH=$(printf "$AUTH_JSON" "${GITHUB_PERSONAL_ACCESS_TOKEN}")
 }
 
+if [ $# -gt 0 ]; then
+
+    if [ "$1" == "test" ]; then
+        shift 1
+
+        COMMAND="vendor/bin/pest $@"
+    else
+        COMMAND="$@"
+    fi
+else
+    COMMAND="ls"
+fi
+
 docker run --rm -it \
     -u $(id -u):$(id -g) \
     -v $(pwd):/usr/src/myapp \
     -w /usr/src/myapp \
     -e COMPOSER_AUTH="$COMPOSER_AUTH" \
-    tombenevides/xdebug-composer:php-8.2 "$@"
+    tombenevides/xdebug-composer:php-8.2 $COMMAND

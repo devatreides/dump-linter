@@ -8,9 +8,9 @@ use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\Tokenizer\Tokens;
 use SplFileInfo;
 
-class DumpRemoval implements FixerInterface
+final class DumpRemovalFixer implements FixerInterface
 {
-    private $statements = [
+    private array $statements = [
         'var_dump',
         'dump',
         'dd'

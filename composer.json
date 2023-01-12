@@ -16,5 +16,13 @@
     ],
     "require": {
         "friendsofphp/php-cs-fixer": "^3.13"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.22"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }
