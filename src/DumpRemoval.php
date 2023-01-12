@@ -7,7 +7,7 @@ use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\Tokenizer\Tokens;
 
-class DumpLinter extends AbstractFunctionReferenceFixer
+class DumpRemoval extends AbstractFunctionReferenceFixer
 {
     private $statements = [
         'var_dump',
