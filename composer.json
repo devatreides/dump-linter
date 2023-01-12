@@ -1,0 +1,20 @@
+{
+    "name": "tombenevides/dump-linter",
+    "description": "A custom rules to remove dump functions from PHP code",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tombenevides\\DumpLinter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tom Benevides",
+            "email": "tom@tonge.dev"
+        }
+    ],
+    "require": {
+        "friendsofphp/php-cs-fixer": "^3.13"
+    }
+}
