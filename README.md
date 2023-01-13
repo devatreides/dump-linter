@@ -53,7 +53,7 @@ More info or questions about PHP-CS-Fixer configuration file, just check [this l
 
 ### Running the linter with custom rule
 
-Since this is a risky rule, the default command `php-cs-fixer fix -v` will not work. Therefore, to allow the rule to make the expected changes, you need to give the linter permission to perform risky actions. You do this by adding the `--allow risky=yes` flag.
+Since this is a risky rule, the default command `php-cs-fixer fix -v` will not work. Therefore, to allow the rule to make the expected changes, you need to give the linter permission to perform risky actions. You do this by adding the `--allow-risky=yes` flag.
 
 ## LICENSE
 
