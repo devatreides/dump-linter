@@ -22,7 +22,7 @@ Sometimes you are debugging and end up deploying with your code a `dump`or a `va
 
 ## HOW TO INSTALL
 
-To install the package, jus use [composer](https://getcomposer.org):
+To install the package, just use [composer](https://getcomposer.org):
 
 ```bash
 composer require tombenevides/dump-linter
@@ -61,4 +61,4 @@ Since this is a risky rule, the default command `php-cs-fixer fix -v` will not w
 
 ## UPDATES
 
-👋 Follow the author [@devatreides](https://twitter.com/tongedev) on Twitter to know more about the last updates and other projects. Say Hi!
+👋 Follow the author [@devatreides](https://twitter.com/devatreides) on Twitter to know more about the last updates and other projects. Say Hi!
