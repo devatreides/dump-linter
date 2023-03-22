@@ -49,7 +49,7 @@ return $config
     ])
 ```
 
-List of dump statements that will be removed: `dump()`,`var_dump()`,`dd()`,`ray()`,`dumps()`.
+> List of dump statements that will be removed: `dump()`,`var_dump()`,`dd()`,`ray()` and `dumps()`.
 
 More info or questions about PHP-CS-Fixer configuration file, just check [this link](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/config.rst).
 
