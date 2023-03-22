@@ -13,7 +13,9 @@ final class DumpRemovalFixer implements FixerInterface
     private array $statements = [
         'var_dump',
         'dump',
-        'dd'
+        'dd',
+        'ray',
+        'dumps',
     ];
 
     public function getName(): string
